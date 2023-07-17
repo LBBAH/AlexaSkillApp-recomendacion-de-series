@@ -1,0 +1,354 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "plataforma",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.880839338238.819030748506.1418271314171"
+                }
+              ],
+              "type": "platafromas",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.24765735291.383661021791"
+              }
+            }
+          ],
+          "name": "recomendPlataformaIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "region",
+              "elicitationRequired": false,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "recomendRegionIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "anio",
+              "elicitationRequired": false,
+              "validations": [
+                {
+                  "type": "isLessThanOrEqualTo",
+                  "prompt": "Slot.Validation.169023723699.1361634559315.1243997638750",
+                  "value": "2023"
+                }
+              ],
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "confirmationRequired": false,
+              "prompts": {}
+            }
+          ],
+          "name": "recomendAnioEstrenoIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        },
+        {
+          "slots": [
+            {
+              "name": "eleccion",
+              "elicitationRequired": true,
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.424483118106.1401160536039.551730193650"
+                }
+              ],
+              "type": "eleccion",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.424483118106.1401160536039"
+              }
+            }
+          ],
+          "name": "eleccionDeOpcionesIntent",
+          "confirmationRequired": false,
+          "prompts": {}
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "ayuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "slots": [],
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hola",
+            "como estás",
+            "di hola mundo",
+            "di hola",
+            "hola mundo"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "actor",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "recomendActorIntent",
+          "samples": [
+            "Recomiendame una serie donde salga el actor {actor}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "categoria",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "recomendCategoriaIntent",
+          "samples": [
+            "recomiendame una serie de la categoria {categoria}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "anio",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            }
+          ],
+          "name": "recomendAnioEstrenoIntent",
+          "samples": [
+            "Recomiendame una serie del año {anio}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "region",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "recomendRegionIntent",
+          "samples": [
+            "Quiero una serie de la region de {region}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "plataforma",
+              "type": "platafromas"
+            }
+          ],
+          "name": "recomendPlataformaIntent",
+          "samples": [
+            "Recomiendame una serie que sea de la plataforma de {plataforma}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "GuardarSerieIntent",
+          "samples": [
+            "guardar",
+            "guardar para despues",
+            "guardar esta serie",
+            "guardar serie"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "eleccion",
+              "type": "eleccion",
+              "samples": [
+                "quiero buscar una serie por {eleccion}"
+              ]
+            }
+          ],
+          "name": "eleccionDeOpcionesIntent",
+          "samples": [
+            "quiero buscar una serie por {eleccion}"
+          ]
+        },
+        {
+          "slots": [],
+          "name": "SerieGuardadeIntent",
+          "samples": [
+            "mi serie guardada"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "plataforma"
+              },
+              "id": "5"
+            },
+            {
+              "name": {
+                "value": "region"
+              },
+              "id": "4"
+            },
+            {
+              "name": {
+                "value": "año"
+              },
+              "id": "3"
+            },
+            {
+              "name": {
+                "value": "categoria"
+              },
+              "id": "2"
+            },
+            {
+              "name": {
+                "value": "actor"
+              },
+              "id": "1"
+            }
+          ],
+          "name": "eleccion"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "netflix"
+              }
+            },
+            {
+              "name": {
+                "value": "AMC"
+              }
+            },
+            {
+              "name": {
+                "value": "HBO"
+              }
+            }
+          ],
+          "name": "platafromas"
+        }
+      ],
+      "invocationName": "recomendar serie"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tenemos ese tipo de eleccion por favor ingresa las que se indican"
+          }
+        ],
+        "id": "Slot.Validation.1505517309656.902662091786.894620707431"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "no tengo algo sobre esta plataforma los siento, prueba otra"
+          }
+        ],
+        "id": "Slot.Validation.21135149072.742218425647.1003675285992"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Aun no hay series en este año por favor dime un año menor"
+          }
+        ],
+        "id": "Slot.Validation.169023723699.1361634559315.1243997638750"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tenemos ese tipo de eleccion por favor ingresa las que se indican"
+          }
+        ],
+        "id": "Slot.Validation.77289989790.780005930771.43738142959"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tenemos ese tipo de eleccion por favor ingresa las que se indican"
+          }
+        ],
+        "id": "Elicit.Slot.1068826098558.1503301114372"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tengo esa opcion por favor ingresa alguna de las ya mencionadas"
+          }
+        ],
+        "id": "Elicit.Slot.424483118106.1401160536039"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tengo algo relacionado con esa opcion, por favor ingresa los que ya te habia mensionado"
+          }
+        ],
+        "id": "Slot.Validation.424483118106.1401160536039.551730193650"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "no tengo algo sobre esta plataforma los siento, prueba otra"
+          }
+        ],
+        "id": "Elicit.Slot.24765735291.383661021791"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "no tengo algo sobre esta plataforma por favor ingrese otro o vuelva a intentar"
+          }
+        ],
+        "id": "Slot.Validation.880839338238.819030748506.1418271314171"
+      }
+    ]
+  }
+}
